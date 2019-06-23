@@ -1,7 +1,7 @@
 # Xaltius-assignment-spring
 A simple restful web server using Spring 5
 
-[https://xaltius-spring-rest-server.herokuapp.com/](https://xaltius-spring-rest-server.herokuapp.com/)
+[https://xaltius-spring-rest-server.herokuapp.com/process/age](https://xaltius-spring-rest-server.herokuapp.com/process/age)
 
 
 ## Installation
