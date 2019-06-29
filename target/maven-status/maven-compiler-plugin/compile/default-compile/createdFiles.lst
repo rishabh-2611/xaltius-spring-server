@@ -1,2 +1,3 @@
 com/xaltius/demo/controller/DemoController.class
+com/xaltius/demo/utils/UserInfoUtil.class
 com/xaltius/demo/model/UserDetails.class

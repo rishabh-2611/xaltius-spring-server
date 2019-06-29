@@ -2,7 +2,10 @@ package com.xaltius.demo.controller;
 
 import com.xaltius.demo.model.UserDetails;
 
+import com.xaltius.demo.utils.UserInfoUtil;
+
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,18 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/process")
 public class DemoController {
-	
-	@PostMapping(value="/age", consumes="application/json")
+
+	private UserInfoUtil userInfoUtil = new UserInfoUtil();
+
+	@PostMapping(value = "/age", consumes = "application/json")
 	public @ResponseBody ResponseEntity<Object> verifyAge(@RequestBody UserDetails userDetails) {
 		JSONObject json = new JSONObject();
+		String backgroundClassName = userInfoUtil.getBackgroundClassName(userDetails.getYear());
+		json.put("backgroundClassName", backgroundClassName);
 
-		if(userDetails.getAge()<= 20)
-			json.put("message","You are a Teenager");
-		else if(userDetails.getAge() >= 21 && userDetails.getAge() <= 50)
-			json.put("message","You are an Adult");
-		else 
-			json.put("message","You are a Senior citizen, Take Care !");
-		
 		return new ResponseEntity<Object>(json.toString(), HttpStatus.OK);
-	}	
+	}
 }
