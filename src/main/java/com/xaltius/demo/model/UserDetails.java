@@ -21,7 +21,6 @@ public class UserDetails {
 		this.name = name;
 	}
 
-	
 	// For DOB_day
 	public int getDay() {
 		return day;
@@ -30,7 +29,6 @@ public class UserDetails {
 	public void setDay(int day) {
 		this.day = day;
 	}
-	
 
 	// For DOB_month
 	public int getMonth() {
@@ -41,7 +39,6 @@ public class UserDetails {
 		this.month = month;
 	}
 
-	
 	// For DOB_year
 	public int getYear() {
 		return year;
